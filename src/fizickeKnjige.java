@@ -8,6 +8,10 @@ public class fizickeKnjige extends Knjige {
         this.brojStranica = brojStranica;
     }
 
+    public fizickeKnjige(int cena, String naslov, String autor) {
+        super("", "", cena, naslov, autor, "");
+    }
+
     public int getBrojStranica() {
         return brojStranica;
     }

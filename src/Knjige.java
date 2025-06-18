@@ -10,6 +10,9 @@ public abstract class Knjige extends Proizvodi {
         this.zanr = zanr;
     }
 
+
+
+
     public String getNaslov() {
         return naslov;
     }

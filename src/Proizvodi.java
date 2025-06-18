@@ -10,6 +10,9 @@ public abstract class Proizvodi {
         this.cena = cena;
     }
 
+    public Proizvodi() {
+    }
+
     public String getTip() {
         return tip;
     }

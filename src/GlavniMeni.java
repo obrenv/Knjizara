@@ -32,13 +32,6 @@ static void glavnaStrana(){
     System.out.println("║ 6 ▐ 💾 Save & Exit                                           ║");
     System.out.println("╚══════════════════════════════════════════════════════════════╝");
     System.out.println("            Unesi izbor (1-6): ");
-
-
-
-
-
-
-
 }
 
 
@@ -54,6 +47,14 @@ public static void glavniMeniOdabir(Knjizara knjizara){
             pregledProizvoda(knjizara);
         }
 
+        if(odabir == 2){
+            dodajKnjigu();
+        }
+
+        if(odabir == 6){
+            break;
+        }
+
     }
 
 }
@@ -64,6 +65,25 @@ public static void pregledProizvoda(Knjizara knjizara){
     for (Proizvodi x : knjizara.proizvodi){
         System.out.println(x);
     }
+}
+
+public static void dodajKnjigu(){
+    Scanner sc = new Scanner(System.in);
+
+    System.out.println("Unesite autora:");
+    String autor = sc.nextLine();
+
+    System.out.println("Unesite naslov:");
+    String naslov = sc.nextLine();
+
+    System.out.println("Unesite cenu:");
+    int cena = sc.nextInt();
+
+
+    Proizvodi knjiga = new fizickeKnjige(cena, naslov,autor);
+    Knjizara.Vukovic.proizvodi.add(knjiga);
+
+
 }
 
     public static void clearConsole() {
