@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class GlavniMeni {
@@ -51,6 +53,10 @@ public static void glavniMeniOdabir(Knjizara knjizara){
             dodajKnjigu();
         }
 
+        if(odabir == 3){
+           pretraziKnjigu();
+        }
+
         if(odabir == 6){
             break;
         }
@@ -58,6 +64,12 @@ public static void glavniMeniOdabir(Knjizara knjizara){
     }
 
 }
+
+    public static void clearConsole() {
+        for (int i = 0; i < 50; i++) {
+            System.out.println();
+        }
+    }
 
 public static void pregledProizvoda(Knjizara knjizara){
     clearConsole();
@@ -86,10 +98,26 @@ public static void dodajKnjigu(){
 
 }
 
-    public static void clearConsole() {
-        for (int i = 0; i < 50; i++) {
-            System.out.println();
+    public static void pretraziKnjigu(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Unesite termin za pretragu:");
+        String pretraga = sc.nextLine();
+        List<Knjige> kastovaneKnjige = new ArrayList<>();
+
+        for (Proizvodi x : Knjizara.Vukovic.proizvodi){
+            if(x instanceof Knjige){
+                kastovaneKnjige.add((Knjige)x);
+            }
         }
+
+        for(Knjige x : kastovaneKnjige){
+            if(pretraga.toLowerCase().equals(x.getNaslov().toLowerCase()) || pretraga.toLowerCase().equals(x.getAutor().toLowerCase())){
+                System.out.println(x);
+            }
+        }
+
+
+
     }
 
 
