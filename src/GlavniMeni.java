@@ -62,15 +62,24 @@ public class GlavniMeni {
                 break;
             }
 
+            if (odabir == 0) {
+                clearConsole();
+                glavnaStrana();
+            }
+
         }
 
     }
+
+
 
     public static void clearConsole() {
         for (int i = 0; i < 50; i++) {
             System.out.println();
         }
     }
+
+
 
     public static void pregledProizvoda(Knjizara knjizara) {
         clearConsole();
@@ -79,7 +88,11 @@ public class GlavniMeni {
             System.out.println(new StringBuilder().append(i).append(". ").append(x).toString());
             i++;
         }
+        System.out.println("");
+        System.out.println("Ukucaj '0' za povratak na glavni meni.");
     }
+
+
 
     public static void dodajKnjigu() {
         Scanner sc = new Scanner(System.in);
@@ -97,7 +110,8 @@ public class GlavniMeni {
         Proizvodi knjiga = new fizickeKnjige(cena, naslov, autor);
         Knjizara.Vukovic.proizvodi.add(knjiga);
 
-
+        clearConsole();
+        glavnaStrana();
     }
 
     //Tokenizuj string kako bi mogle da rade kompleksnije pretrage
@@ -119,7 +133,7 @@ public class GlavniMeni {
             }
         }
 
-
+        System.out.println("Ukucaj '0' za povratak na glavni meni.");
     }
 
 //Dodaj uslove za pogresne unose etc...
@@ -135,6 +149,10 @@ public class GlavniMeni {
 
         Knjizara.Vukovic.proizvodi.remove(redniBrojKnige-1);
 
+        pregledProizvoda(Knjizara.Vukovic);
+        System.out.println("");
+        System.out.println("Unesi '0' za povratak na glavni meni.");
+        System.out.println("Unesi '4' da obrises knjigu.");
     }
 
 
