@@ -8,7 +8,7 @@ public class GlavniMeni {
 
         System.out.println("╔══════════════════════════════════════════════════════════════╗");
         System.out.println("║                                                              ║");
-        System.out.println("║                      KNJIŽARA VUKOVIĆ                        ║");
+        System.out.println("║                           KNJIŽARA                           ║");
         System.out.println("║                                                              ║");
         System.out.println("║                        _                                     ║");
         System.out.println("║                       / \\      _-'                           ║");
@@ -72,13 +72,11 @@ public class GlavniMeni {
     }
 
 
-
     public static void clearConsole() {
         for (int i = 0; i < 50; i++) {
             System.out.println();
         }
     }
-
 
 
     public static void pregledProizvoda(Knjizara knjizara) {
@@ -91,7 +89,6 @@ public class GlavniMeni {
         System.out.println("");
         System.out.println("Ukucaj '0' za povratak na glavni meni.");
     }
-
 
 
     public static void dodajKnjigu() {
@@ -136,7 +133,7 @@ public class GlavniMeni {
         System.out.println("Ukucaj '0' za povratak na glavni meni.");
     }
 
-//Dodaj uslove za pogresne unose etc...
+    //Dodaj uslove za pogresne unose etc...
     public static void izbaciKnjigu() {
         pregledProizvoda(Knjizara.Vukovic);
         System.out.println("");
@@ -147,7 +144,7 @@ public class GlavniMeni {
         Scanner sc = new Scanner(System.in);
         int redniBrojKnige = sc.nextInt();
 
-        Knjizara.Vukovic.proizvodi.remove(redniBrojKnige-1);
+        Knjizara.Vukovic.proizvodi.remove(redniBrojKnige - 1);
 
         pregledProizvoda(Knjizara.Vukovic);
         System.out.println("");
